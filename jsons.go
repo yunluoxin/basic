@@ -4,6 +4,7 @@ package basic
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -16,9 +17,12 @@ func LoadJSONFile(filename string, t any) (any, error) {
 	return t, err
 }
 
-func LoadJSONString(content string, t any) (any, error)  {
+func LoadJSONString(content string, t any) error  {
 	err := json.Unmarshal([]byte(content), t)
-	return t, err
+	if err != nil {
+		fmt.Println(err)
+	}
+	return err
 }
 
 func DumpToJSONString(t any) (string, error) {
