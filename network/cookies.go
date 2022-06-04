@@ -1,8 +1,8 @@
 package network
 
 import (
-	"basic"
 	"errors"
+	"github.com/yunluoxin/basic"
 	"net/http"
 	"strings"
 )
